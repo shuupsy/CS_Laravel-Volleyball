@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('continent_id')
+                ->constrained();
+            $table->string('nom_equipe');
+            $table->string('ville');
+            $table->string('pays');
+            $table->integer('nb_joueurs_max');
             $table->timestamps();
         });
     }

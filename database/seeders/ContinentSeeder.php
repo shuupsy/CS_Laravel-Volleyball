@@ -16,11 +16,11 @@ class ContinentSeeder extends Seeder
     public function run()
     {
         DB::table('continents')->insert([
-            ['nom' => 'Europe'],
-            ['nom' => 'Asie'],
-            ['nom' => 'Afrique'],
-            ['nom' => 'Amérique'],
-            ['nom' => 'Océanie'],
+            ['nom_continent' => 'Europe'],
+            ['nom_continent' => 'Asie'],
+            ['nom_continent' => 'Afrique'],
+            ['nom_continent' => 'Amérique'],
+            ['nom_continent' => 'Océanie'],
         ]);
     }
 }
