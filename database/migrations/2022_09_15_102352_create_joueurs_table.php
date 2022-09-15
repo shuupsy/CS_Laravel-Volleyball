@@ -15,6 +15,19 @@ return new class extends Migration
     {
         Schema::create('joueurs', function (Blueprint $table) {
             $table->id();
+            $table->string('nom_joueur');
+            $table->string('prenom_joueur');
+            $table->string('age');
+            $table->string('telephone');
+            $table->string('mail');
+            $table->string('genre');
+            $table->string('pays_origine');
+            $table->foreignId('role_id')
+                ->constrained();
+            $table->foreignId('equipe_id')
+                ->constrained();
+            $table->foreignId('photo_id')
+                ->constrained();
             $table->timestamps();
         });
     }
