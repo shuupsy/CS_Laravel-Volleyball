@@ -34,11 +34,8 @@ Si l'équipe n'a plus de place dans un poste alors le joueur ne peut pas être r
 
 2) Affichages :
 ***PAGE ALL EQUIPES
-Il faut une page pour afficher TOUTES les équipes :
-nom de l'équipe , ville , nombre de joueurs sur/maximum de place
-
-exemple :
-Molenvolley , bruxelles, 5/7max + un button voir(show)
+Afficher TOUTES les équipes : nom de l'équipe , ville , nombre de joueurs sur/maximum de place
+exemple :Molenvolley , bruxelles, 5/7max + un button voir(show)
 
 -dans le show de chaque équipes on peut revoir le nom de l'equipe la ville le nombre de joueurs sur/maximum de place et tous les joueurs qui en font partis juste leur nom prénom et leur role et un button voir qui nous ramène sur le show du joueur pour y voir TOUTES ses informations et même son équipe. ( utiliser les méthode dans les modèles pour récupérer cette information.)
 
@@ -46,8 +43,7 @@ Molenvolley , bruxelles, 5/7max + un button voir(show)
 Il faut une page pour afficher tous les joueurs : Nom, Prénom, Nom d'équipe + button pour voir le show du joueur
 le nom de l'équipe du joueur est cliquable également pour aller voir le show de l'équipe avec toutes les informations !
 
-***HOME
-La page home avec :
+***PAGE HOME
 une section ( équipes remplies )
 une section ( 2 équipes non remplies )
 une section ( 4 joueurs sans équipes au hasard )
@@ -57,7 +53,7 @@ une section ( les équipes hors europes )
 Une section 5 joueuses au hasard qui ont une équipe !
 Une section 5 joueurs homme et qui ont une équipe !
 
-DB informations
+3) DB informations
 Relations one to many + one to one
 -Une table joueur
 -Une table photo
@@ -66,7 +62,7 @@ Relations one to many + one to one
 -Une table continent
 si vous trouvez qu'on peut encore en rajouter, n'hésitez pas
 
-Pour rappel :
+RAPPEL
 -template(extends, yield,include etc)
 -validates, old, messages flash, ect
 -sytème de storage pour img
