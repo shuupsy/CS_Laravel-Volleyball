@@ -18,6 +18,8 @@
         @yield('content')
     </main>
 
+    <hr class="h-px my-3 bg-gray-200 border-none dark:bg-gray-700">
+
     <footer>
         @include('partial.footer')
     </footer>
