@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipe;
 use Illuminate\Http\Request;
 
 class EquipesControllers extends Controller
@@ -13,7 +14,8 @@ class EquipesControllers extends Controller
      */
     public function index()
     {
-        //
+        $equipes = Equipe::all();
+        return view('pages.equipes', compact('equipes'));
     }
 
     /**

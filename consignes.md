@@ -4,11 +4,11 @@ Volleyball,
 Pour une compétition de volleyball, il faut réaliser un site internet (plate-forme). 
 Le client veut pouvoir créer des équipes et les modifier
 
-1) Détails téchniques
+1) DETAILS
 
 Chaque équipes a : 
 -nom de club, 
--une ville qu'elle représente ,
+-une ville qu'elle représente,
 -un pays 
 -maximum de joueur possible dans leur équipe et par role (2 avant, 2 centraux, 2 arrière, 3remplacants)*, 
 -continent_id (pour déterminer dans quel contient l'équipe joue)
