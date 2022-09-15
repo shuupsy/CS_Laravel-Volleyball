@@ -77,7 +77,7 @@
 
                             {{-- Bouton DELETE --}}
                             <td>
-                                <form action="{{ url('album/' . $equipe->id) }}" method="post">
+                                <form action="{{ url('equipes/' . $equipe->id) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button class='bg-red-500 rounded-lg p-2'>SUPPRIMER</button>
@@ -89,5 +89,9 @@
                 </tbody>
             </table>
         </div>
+    </section>
+
+    <section id='equipes_show'>
+
     </section>
 @endsection

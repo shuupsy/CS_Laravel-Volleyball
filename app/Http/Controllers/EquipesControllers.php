@@ -92,6 +92,7 @@ class EquipesControllers extends Controller
      */
     public function destroy($id)
     {
-        //
+        Equipe::find($id)-> delete();
+        return redirect()->back();
     }
 }
