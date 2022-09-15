@@ -6,7 +6,7 @@ Le client veut pouvoir créer des équipes et les modifier
 
 1) DETAILS
 
-Chaque équipes a : 
+Chaque équipe a : 
 -nom de club, 
 -une ville qu'elle représente,
 -un pays 
@@ -64,5 +64,5 @@ si vous trouvez qu'on peut encore en rajouter, n'hésitez pas
 
 RAPPEL
 -template(extends, yield,include etc)
--validates, old, messages flash, ect
+-validates, old, messages flash, etc
 -sytème de storage pour img

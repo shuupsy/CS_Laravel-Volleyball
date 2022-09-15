@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipe;
+use App\Models\Continent;
 use Illuminate\Http\Request;
 
 class EquipesControllers extends Controller
@@ -15,7 +16,8 @@ class EquipesControllers extends Controller
     public function index()
     {
         $equipes = Equipe::all();
-        return view('pages.equipes', compact('equipes'));
+        $continents = Continent::all();
+        return view('pages.equipes', compact('equipes', 'continents'));
     }
 
     /**
@@ -36,7 +38,16 @@ class EquipesControllers extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_equipe = new Equipe();
+        $new_equipe -> nom_equipe = $request -> nom;
+        $new_equipe -> ville = $request -> ville;
+        $new_equipe -> pays = $request -> pays;
+        $new_equipe -> nb_joueurs_max = $request -> joueurs;
+        $new_equipe -> continent_id = $request -> continent;
+
+        $new_equipe->save();
+
+        return redirect()->back();
     }
 
     /**
