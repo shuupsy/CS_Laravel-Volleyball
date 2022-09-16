@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
+use App\Models\Photo;
 use App\Models\Equipe;
 use App\Models\Joueur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class JoueursControllers extends Controller
 {
@@ -40,7 +42,26 @@ class JoueursControllers extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Storage::put('public/photos', $request->file('photo'));
+
+        $photo= new Photo();
+        $photo-> photo_path = $request->file('photo')->hashName();
+        $photo->save();
+
+        Joueur::create([
+            'nom_joueur' => $request->nom,
+            'prenom_joueur' => $request->prenom,
+            'age' => $request->age,
+            'telephone' => $request->telephone,
+            'mail' => $request->mail,
+            'genre' => $request->genre,
+            'pays_origine' => $request->pays,
+            'role_id' => $request->role,
+            'equipe_id' => $request->equipe,
+            'photo_id' => $photo->id,
+        ]);
+
+        return redirect()->back();
     }
 
     /**

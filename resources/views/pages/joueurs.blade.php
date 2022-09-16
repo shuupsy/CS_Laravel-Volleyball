@@ -82,9 +82,9 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nom de l'équipe</th>
-                        <th>Ville</th>
-                        <th>Joueurs max</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Equipe</th>
                         <th>Détails</th>
                         <th></th>
                         <th></th>
@@ -94,10 +94,10 @@
                 <tbody>
                     @foreach ($joueurs as $joueur)
                         <tr>
-                            <td>{{ $joueur->id }}</td>
-                            <td>{{ $joueur->nom_equipe }}</td>
-                            <td>{{ $joueur->ville }}</td>
-                            <td class='text-center'>{{ $joueur->nb_joueurs_max }}</td>
+                            <td>{{ $joueur-> id }}</td>
+                            <td>{{ $joueur-> nom_joueur }}</td>
+                            <td>{{ $joueur-> prenom_joueur}}</td>
+                            <td>{{ $joueur-> equipe -> nom_equipe}}</td>
 
                             {{-- Bouton VOIR --}}
                             <td>
