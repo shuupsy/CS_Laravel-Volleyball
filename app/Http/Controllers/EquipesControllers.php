@@ -16,7 +16,7 @@ class EquipesControllers extends Controller
      */
     public function index()
     {
-        $equipes = Equipe::all();
+        $equipes = Equipe::withCount('joueurs')->get();
         $continents = Continent::all();
         return view('pages.equipes', compact('equipes', 'continents'));
     }

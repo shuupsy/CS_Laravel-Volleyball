@@ -65,7 +65,7 @@
                             <td>{{ $equipe->id }}</td>
                             <td>{{ $equipe->nom_equipe }}</td>
                             <td>{{ $equipe->ville }}</td>
-                            <td class='text-center'>{{ $equipe->nb_joueurs_max }}</td>
+                            <td class='text-center'> {{ $equipe -> joueurs_count }} / {{ $equipe->nb_joueurs_max }}</td>
 
                             {{-- Bouton VOIR --}}
                             <td>
