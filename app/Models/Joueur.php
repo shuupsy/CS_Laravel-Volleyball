@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Role;
+use App\Models\Photo;
 use App\Models\Equipe;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,5 +16,13 @@ class Joueur extends Model
 
     public function equipe() {
         return $this->belongsTo(Equipe::class);
+    }
+
+    public function photo() {
+        return $this->belongsTo(Photo::class);
+    }
+
+    public function role() {
+        return $this->belongsTo(Role::class);
     }
 }

@@ -1,8 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
-<section>
-    <div>
+    <section>
         {{-- Form --}}
         <div>
             <h1 class='text-5xl'>Ajouter un nouveau joueur !</h1>
@@ -21,7 +20,8 @@
 
                 <div>
                     <label for="age">Age: </label>
-                    <input type="number" name="age" id="age" value='{{ old('age') }}' min='5' max='90'>
+                    <input type="number" name="age" id="age" value='{{ old('age') }}' min='5'
+                        max='90'>
                 </div>
 
                 <div>
@@ -52,7 +52,7 @@
                     <label for="role">Rôle: </label>
                     <select name="role" id="role">
                         @foreach ($roles as $role)
-                            <option value="{{ $role -> id }}">{{ $role -> role }}</option>
+                            <option value="{{ $role->id }}">{{ $role->role }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -61,7 +61,7 @@
                     <label for="equipe">Ajouter à l'équipe : </label>
                     <select name="equipe" id="equipe">
                         @foreach ($equipes as $equipe)
-                            <option value="{{ $role -> id }}">{{ $equipe -> nom_equipe }}</option>
+                            <option value="{{ $equipe->id }}">{{ $equipe->nom_equipe }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -76,7 +76,7 @@
             </form>
         </div>
 
-        {{-- Liste d'équipes --}}
+        {{-- Liste de joueurs --}}
         <div>
             <table class="table-auto">
                 <thead>
@@ -94,23 +94,25 @@
                 <tbody>
                     @foreach ($joueurs as $joueur)
                         <tr>
-                            <td>{{ $joueur-> id }}</td>
-                            <td>{{ $joueur-> nom_joueur }}</td>
-                            <td>{{ $joueur-> prenom_joueur}}</td>
-                            <td>{{ $joueur-> equipe -> nom_equipe}}</td>
+                            <td>{{ $joueur->id }}</td>
+                            <td>{{ $joueur->nom_joueur }}</td>
+                            <td>{{ $joueur->prenom_joueur }}</td>
+                            <td>{{ $joueur->equipe->nom_equipe }}</td>
 
                             {{-- Bouton VOIR --}}
                             <td>
-                                <a href="{{ url('equipes/' . $joueur->id) }}"> <button class='bg-blue-200 rounded-lg p-2'>INFO</button></a>
+                                <a href="{{ url('joueurs/' . $joueur->id) }}"> <button
+                                        class='bg-blue-200 rounded-lg p-2'>INFO</button></a>
                             </td>
 
                             <td>
-                                <a href="{{ url('equipes/' . $joueur->id . '/edit') }}"> <button class='bg-slate-500 text-white rounded-lg p-2'>EDIT</button></a>
+                                <a href="{{ url('equipes/' . $joueur->id . '/edit') }}"> <button
+                                        class='bg-slate-500 text-white rounded-lg p-2'>EDIT</button></a>
                             </td>
 
                             {{-- Bouton DELETE --}}
                             <td>
-                                <form action="{{ url('equipes/' . $joueur->id) }}" method="post">
+                                <form action="{{ url('joueurs/' . $joueur->id) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button class='bg-red-500 rounded-lg p-2'>SUPPRIMER</button>
@@ -122,6 +124,5 @@
                 </tbody>
             </table>
         </div>
-    </div>
-</section>
+    </section>
 @endsection

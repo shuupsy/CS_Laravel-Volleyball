@@ -23,11 +23,14 @@ return new class extends Migration
             $table->string('genre');
             $table->string('pays_origine');
             $table->foreignId('role_id')
-                ->constrained();
+                ->constrained()
+                ->onDelete('cascade');
             $table->foreignId('equipe_id')
-                ->constrained();
+                ->constrained()
+                ->onDelete('cascade');
             $table->foreignId('photo_id')
-                ->constrained();
+                ->constrained()
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

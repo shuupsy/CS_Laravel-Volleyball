@@ -106,6 +106,12 @@ class JoueursControllers extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete_joueur = Joueur::find($id);
+
+        Storage::delete('public/photos/' . $delete_joueur -> photo -> photo_path);
+
+        $delete_joueur -> photo() -> delete();
+
+        return redirect()->back();
     }
 }
