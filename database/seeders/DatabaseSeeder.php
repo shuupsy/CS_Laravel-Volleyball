@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ContinentSeeder::class,
-            RoleSeeder::class
+            RoleSeeder::class,
+            EquipeSeeder::class,
         ]);
 
     }
