@@ -1,7 +1,8 @@
 @extends('layouts.index')
 
 @section('content')
-    <section>
+<section>
+    <div>
         {{-- Form --}}
         <div>
             <h1 class='text-5xl'>Ajouter une nouvelle équipe !</h1>
@@ -89,9 +90,6 @@
                 </tbody>
             </table>
         </div>
-    </section>
-
-    <section id='equipes_show'>
-
-    </section>
+    </div>
+</section>
 @endsection

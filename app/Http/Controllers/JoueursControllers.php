@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
+use App\Models\Equipe;
 use App\Models\Joueur;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,9 @@ class JoueursControllers extends Controller
     public function index()
     {
         $joueurs = Joueur::all();
-        return view('pages.equipes', compact('joueurs'));
+        $roles = Role::all();
+        $equipes = Equipe::all();
+        return view('pages.joueurs', compact('joueurs', 'roles', 'equipes'));
     }
 
     /**

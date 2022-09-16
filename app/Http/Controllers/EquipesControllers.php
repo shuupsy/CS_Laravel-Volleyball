@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipe;
+use App\Models\Joueur;
 use App\Models\Continent;
 use Illuminate\Http\Request;
 
@@ -58,7 +59,10 @@ class EquipesControllers extends Controller
      */
     public function show($id)
     {
-        //
+        $equipe = Equipe::find($id);
+        $joueurs_equipe = Joueur::where('equipe_id', '=', $id)
+                                ->get();
+        return view('pages.show_equipes', compact('equipe', 'joueurs_equipe'));
     }
 
     /**
@@ -69,7 +73,9 @@ class EquipesControllers extends Controller
      */
     public function edit($id)
     {
-        //
+        $equipe = Equipe::find($id);
+        $continents = Continent::all();
+        return view('pages.edit_equipes', compact('equipe', 'continents'));
     }
 
     /**
@@ -81,7 +87,16 @@ class EquipesControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update_equipe = Equipe::find($id);
+        $update_equipe->update([
+            'nom_equipe' => $request -> nom,
+            'ville' => $request -> ville,
+            'pays' => $request -> pays,
+            'nb_joueurs_max' => $request -> joueurs,
+            'continent_id' => $request -> continent,
+        ]);
+
+        return redirect('/equipes');
     }
 
     /**

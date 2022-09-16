@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('continent_id')
-                ->constrained();
+                ->constrained()
+                ->onDelete('cascade');
             $table->string('nom_equipe');
             $table->string('ville');
             $table->string('pays');
