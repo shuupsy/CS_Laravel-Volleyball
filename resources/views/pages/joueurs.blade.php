@@ -39,7 +39,7 @@
                     <select name="genre" id="genre">
                         <option value="F">Femme</option>
                         <option value="H">Homme</option>
-                        <option value="X">Autre</option>
+                        <option value="">Non défini</option>
                     </select>
                 </div>
 

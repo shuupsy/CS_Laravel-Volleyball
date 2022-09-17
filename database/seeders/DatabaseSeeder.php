@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             EquipeSeeder::class,
         ]);
+        \App\Models\Joueur::factory(20)->create();
 
     }
 }

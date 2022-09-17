@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('age');
             $table->string('telephone');
             $table->string('mail');
-            $table->string('genre');
+            $table->string('genre')->nullable();
             $table->string('pays_origine');
             $table->foreignId('role_id')
                 ->constrained()
@@ -30,6 +30,7 @@ return new class extends Migration
                 ->constrained()
                 ->onDelete('cascade');
             $table->foreignId('photo_id')
+                ->nullable()
                 ->constrained()
                 ->onDelete('cascade');
             $table->timestamps();
