@@ -23,10 +23,17 @@ class EquipeSeeder extends Seeder
             'nb_joueurs_max' => 6
             ],
 
-            ['continent_id' => 4,
-            'nom_equipe' => 'Carasoulo',
-            'ville' => 'Mexico City',
-            'pays' => 'Mexique',
+            ['continent_id' => 1,
+            'nom_equipe' => 'Lady Boule',
+            'ville' => 'Bruxelles',
+            'pays' => 'Belgique',
+            'nb_joueurs_max' => 6
+            ],
+
+            ['continent_id' => 2,
+            'nom_equipe' => 'Nekoma',
+            'ville' => 'Tokyo',
+            'pays' => 'Japon',
             'nb_joueurs_max' => 6
             ],
 
@@ -36,12 +43,21 @@ class EquipeSeeder extends Seeder
             'pays' => 'Ghana',
             'nb_joueurs_max' => 6
             ],
-            ['continent_id' => 1,
-            'nom_equipe' => 'Lady Boule',
-            'ville' => 'Bruxelles',
-            'pays' => 'Belgique',
+
+            ['continent_id' => 4,
+            'nom_equipe' => 'Carasoulo',
+            'ville' => 'Mexico City',
+            'pays' => 'Mexique',
             'nb_joueurs_max' => 6
             ],
+
+            ['continent_id' => 5,
+            'nom_equipe' => 'Mates',
+            'ville' => 'Canberra',
+            'pays' => 'Australie',
+            'nb_joueurs_max' => 6
+            ],
+
 
         ]);
     }

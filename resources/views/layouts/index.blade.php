@@ -15,7 +15,10 @@
         @include('partial.header')
     </header>
 
-    <main>
+    <main class='w-8/12 mx-auto'>
+        {{-- <div class='flex justify-center my-2'>
+            <img src="/assets/img/image-div1.png" alt="banner img">
+        </div> --}}
         @yield('content')
     </main>
 

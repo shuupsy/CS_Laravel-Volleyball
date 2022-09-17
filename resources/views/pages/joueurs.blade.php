@@ -60,6 +60,7 @@
                 <div>
                     <label for="equipe">Ajouter à l'équipe : </label>
                     <select name="equipe" id="equipe">
+                        <option value=""> </option>
                         @foreach ($equipes as $equipe)
                             <option value="{{ $equipe->id }}">{{ $equipe->nom_equipe }}</option>
                         @endforeach
@@ -97,7 +98,8 @@
                             <td>{{ $joueur->id }}</td>
                             <td>{{ $joueur->nom_joueur }}</td>
                             <td>{{ $joueur->prenom_joueur }}</td>
-                            <td>{{ $joueur->equipe->nom_equipe }}</td>
+
+                            <td>{{ $joueur->equipe_id ? $joueur->equipe->nom_equipe : '' }}</td>
 
                             {{-- Bouton VOIR --}}
                             <td>

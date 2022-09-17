@@ -2,5 +2,8 @@ body {
     background-image: url('/assets/img/background-body.png');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+}
+
+main{
+    height: 200vh;
 }
