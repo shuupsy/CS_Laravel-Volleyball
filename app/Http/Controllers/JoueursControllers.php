@@ -72,7 +72,8 @@ class JoueursControllers extends Controller
      */
     public function show($id)
     {
-        //
+        $joueur = Joueur::find($id);
+        return view('pages.show_joueur', compact('joueur'));
     }
 
     /**

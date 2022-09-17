@@ -10,11 +10,15 @@
         <p>Pays : {{ $equipe -> pays }}</p>
         <p>Continent : {{ $equipe -> continent -> nom_continent }}</p>
 
-        <p>Joueurs max : {{ $equipe -> nb_joueurs_max }}</p>
-        <p>Liste de joueurs :</p>
+        <p>Joueurs max : </p>
+        <p>Liste de joueurs ( {{ $equipe -> joueurs_count }} / {{ $equipe -> nb_joueurs_max }} max )</p>
         <ul>
             @foreach ($joueurs_equipe as $joueur)
-                <li>{{ $joueur -> nom_joueur }}</li>
+                <li>{{ $joueur -> nom_joueur }}, {{ $joueur -> prenom_joueur }}, {{ $joueur -> role -> role }}
+                <a href="{{ url('joueurs/' . $joueur->id) }}">
+                    <button class='bg-blue-200 rounded-lg p-2'>VOIR</button>
+                </a>
+                </li>
             @endforeach
         </ul>
     </div>

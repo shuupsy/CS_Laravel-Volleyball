@@ -59,10 +59,12 @@ class EquipesControllers extends Controller
      */
     public function show($id)
     {
-        $equipe = Equipe::find($id);
+        $equipe = Equipe::find($id)
+                    ->withCount('joueurs')
+                    ->first();
         $joueurs_equipe = Joueur::where('equipe_id', '=', $id)
                                 ->get();
-        return view('pages.show_equipes', compact('equipe', 'joueurs_equipe'));
+        return view('pages.show_equipe', compact('equipe', 'joueurs_equipe'));
     }
 
     /**
