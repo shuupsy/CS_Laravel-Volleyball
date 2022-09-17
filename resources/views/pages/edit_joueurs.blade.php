@@ -21,8 +21,8 @@
 
         <div>
             <label for="age">Age: </label>
-            <input type="number" name="age" id="age" value='{{ $joueur -> age }}' min='5'
-                max='90'>
+            <input type="number" name="age" id="age" value='{{ $joueur -> age }}' min='16'
+                max='50'>
         </div>
 
         <div>

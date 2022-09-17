@@ -19,13 +19,13 @@ class JoueurFactory extends Factory
         return [
             'nom_joueur' => $this->faker->lastName,
                 'prenom_joueur' => $this->faker->firstName,
-                'age' => $this->faker->numberBetween($min=5, $max=90),
+                'age' => $this->faker->numberBetween($min=16, $max=35),
                 'telephone' => $this->faker->phoneNumber,
                 'mail' => $this->faker->email,
                 'genre' => $this->faker->randomElement($genre = array('F','H', null)),
                 'pays_origine' => $this->faker->country,
                 'role_id' => $this->faker->numberBetween($min=1, $max=4),
-                'equipe_id' => $this->faker->randomElement($equipe = array('1','2','3', '4', '5', null)),
+                'equipe_id' => $this->faker->randomElement($equipe = array(null, null, '1','2','3', '4', '5', null, null, null)),
         ];
     }
 }
