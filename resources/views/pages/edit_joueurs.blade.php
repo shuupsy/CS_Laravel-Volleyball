@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    <h1 class='text-5xl'>Ajouter un nouveau joueur !</h1>
+    <h1 class='text-5xl'>Editer {{ $joueur -> prenom_joueur . ' ' . $joueur -> nom_joueur }} !</h1>
     <form action="{{ url('/joueurs' . '/'. $joueur -> id)}}"
         method='post'
         enctype="multipart/form-data">

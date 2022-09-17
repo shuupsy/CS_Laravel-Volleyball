@@ -4,6 +4,9 @@
 <div>
     <h1 class='text-5xl'>Fiche joueur</h1>
 
+    <a href="{{ url('joueurs/' . $joueur->id . '/edit') }}"> <button
+        class='bg-slate-500 text-white rounded-lg p-2'>EDIT</button></a>
+
     <h2 class='text-2xl'>{{ $joueur -> prenom_joueur  . ' ' . $joueur -> nom_joueur }}</h2>
 
     <p>Age : {{ $joueur -> age }}</p>
