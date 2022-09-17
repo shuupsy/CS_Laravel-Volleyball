@@ -84,7 +84,10 @@ class JoueursControllers extends Controller
      */
     public function edit($id)
     {
-        //
+       $joueur = Joueur::find($id);
+       $equipes = Equipe::all();
+       $roles = Role::all();
+       return view('pages.edit_joueurs', compact('joueur', 'equipes', 'roles'));
     }
 
     /**
@@ -96,7 +99,32 @@ class JoueursControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update_photo = Photo::find($id);
+
+        $update_joueur = Joueur::find($id);
+        $update_joueur -> nom_joueur = $request->nom;
+        $update_joueur -> prenom_joueur = $request->prenom;
+        $update_joueur -> age = $request->age;
+        $update_joueur -> telephone = $request->telephone;
+        $update_joueur -> mail = $request->mail;
+        $update_joueur -> genre = $request->genre;
+        $update_joueur -> pays_origine = $request->pays;
+        $update_joueur -> role_id = $request->role;
+        $update_joueur -> equipe_id = $request->equipe;
+
+        if ($request->file('photo') != null) {
+            Storage::delete('public/photos/' . $update_joueur->photo->photo_path);
+
+            Storage::put('public/photos/', $request->file('photo'));
+
+            $update_photo->photo_path = $request->file('photo')->hashName();
+            $update_photo->save();
+            $update_joueur -> photo_id = $update_photo -> id;
+        }
+
+       $update_joueur->save();
+
+        return redirect('/joueurs');
     }
 
     /**

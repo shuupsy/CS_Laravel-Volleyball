@@ -6,7 +6,7 @@
     <h1 class='text-5xl'>Modifier l'équipe : {{ $equipe -> nom_equipe }}</h1>
     <form action="{{ url('/equipes' . '/'. $equipe -> id)}}" method='post'>
         @csrf
-        @method('PUT')
+        @method('PATCH')
 
         <div>
             <label for="nom">Nom de l'équipe: </label>

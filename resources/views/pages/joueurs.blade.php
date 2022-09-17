@@ -106,7 +106,7 @@
                             </td>
 
                             <td>
-                                <a href="{{ url('equipes/' . $joueur->id . '/edit') }}"> <button
+                                <a href="{{ url('joueurs/' . $joueur->id . '/edit') }}"> <button
                                         class='bg-slate-500 text-white rounded-lg p-2'>EDIT</button></a>
                             </td>
 
