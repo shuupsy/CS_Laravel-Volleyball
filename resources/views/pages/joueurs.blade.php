@@ -2,6 +2,10 @@
 
 @section('content')
     <section>
+
+        <div class='relative flex justify-center'>
+            <img src="assets/img/image-banner2.png" alt="banner">
+        </div>
         {{-- Form --}}
         <div>
             <h1 class='text-5xl'>Ajouter un nouveau joueur !</h1>

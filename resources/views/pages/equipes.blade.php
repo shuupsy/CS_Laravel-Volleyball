@@ -2,13 +2,18 @@
 
 @section('content')
     <section>
-        <div class='flex gap-4'>
-            <button class='bg-blue-500 text-white rounded-lg p-2' id='new_team'>NEW</button>
 
+        <div class='relative flex justify-center'>
+            <img src="assets/img/image-banner2.png" alt="banner">
+
+            <div class='absolute bottom-2 right-0 flex gap-4'>
+                <button class='bg-[#67CCC4] rounded-lg p-2' id='new_team'>NEW</button>
+            </div>
         </div>
 
+
         {{-- Liste d'équipes --}}
-        <div class='my-8 flex justify-center'>
+        <div class='flex justify-center'>
             <table class="table-auto w-full">
                 <thead class='bg-[#b8b8ff] h-14 rounded-t-lg'>
                     <tr>
@@ -46,7 +51,8 @@
                                 <form action="{{ url('equipes/' . $equipe->id) }}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class='text-red-500 hover:bg-red-500 hover:text-white hover:rounded-lg p-2'>Retirer</button>
+                                    <button
+                                        class='text-red-500 hover:bg-red-500 hover:text-white hover:rounded-lg p-2'>Retirer</button>
                                 </form>
                             </td>
                         </tr>
@@ -56,6 +62,7 @@
             </table>
         </div>
 
+        
         {{-- Formulaire --}}
         <form action="/equipes" method='post' class='hidden' id='team_form'>
             @csrf
@@ -63,46 +70,45 @@
 
                 <div class='w-2/4 h-2/4 bg-white rounded-lg flex flex-col justify-between p-6'>
 
-                        <h1 class='text-5xl'> Ajouter une nouvelle équipe !</h1>
-                        <div>
-                            <label for="nom">Nom de l'équipe: </label>
-                            <input type="text" name="nom" id="nom" value='{{ old('nom') }}'>
-                        </div>
-
-                        <div>
-                            <label for="continent">Continent: </label>
-                            <select name="continent" id="continent">
-                                @foreach ($continents as $continent)
-                                    <option value="{{ $continent->id }}">{{ $continent->nom_continent }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div>
-                            <label for="pays">Pays: </label>
-                            <input type="texte" name="pays" id="pays" value='{{ old('pays') }}'>
-                        </div>
-
-                        <div>
-                            <label for="ville">Ville: </label>
-                            <input type="text" name="ville" id="ville" value='{{ old('ville') }}'>
-                        </div>
-
-
-                        <div>
-                            <label for="joueurs">Nombre de joueurs max: </label>
-                            <input type="number" name="joueurs" id="joueurs" value='6' min='1' max='6'
-                                value='{{ old('joueurs') }}'>
-                        </div>
-
-
-                        <div class='flex justify-center items-center gap-5'>
-                            <button type='submit' class='bg-blue-500 text-white rounded-lg px-4 py-2'>ENVOYER</button>
-                            <p class='cursor-pointer text-slate-600 hover:border-[1px] hover:rounded-lg hover:border-slate-600 px-4 py-2' id='close_team_form'>Cancel</p>
-                        </div>
-                    </form>
+                    <h1 class='text-5xl'> Ajouter une nouvelle équipe !</h1>
+                    <div>
+                        <label for="nom">Nom de l'équipe: </label>
+                        <input type="text" name="nom" id="nom" value='{{ old('nom') }}'>
                     </div>
-                </div>
-            </div>
+
+                    <div>
+                        <label for="continent">Continent: </label>
+                        <select name="continent" id="continent">
+                            @foreach ($continents as $continent)
+                                <option value="{{ $continent->id }}">{{ $continent->nom_continent }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="pays">Pays: </label>
+                        <input type="texte" name="pays" id="pays" value='{{ old('pays') }}'>
+                    </div>
+
+                    <div>
+                        <label for="ville">Ville: </label>
+                        <input type="text" name="ville" id="ville" value='{{ old('ville') }}'>
+                    </div>
+
+
+                    <div>
+                        <label for="joueurs">Nombre de joueurs max: </label>
+                        <input type="number" name="joueurs" id="joueurs" value='6' min='1' max='6'
+                            value='{{ old('joueurs') }}'>
+                    </div>
+
+
+                    <div class='flex justify-center items-center gap-5'>
+                        <button type='submit' class='bg-blue-500 text-white rounded-lg px-4 py-2'>ENVOYER</button>
+                        <p class='cursor-pointer text-slate-600 hover:border-[1px] hover:rounded-lg hover:border-slate-600 px-4 py-2'
+                            id='close_team_form'>Cancel</p>
+                    </div>
+        </form>
+
     </section>
 @endsection
