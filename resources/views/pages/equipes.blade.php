@@ -83,7 +83,6 @@
 
                     <div class='flex flex-wrap items-center gap-6'>
 
-
                         <input type="text" name="nom" value='{{ old('nom') }}' placeholder="Nom de l'équipe"
                             class='mb-3 p-2 border-b-2 border-[#ffd8be] focus:outline-none focus:border-[#ffb383] ease-in duration-300'>
 
