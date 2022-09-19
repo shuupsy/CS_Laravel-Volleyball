@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>Tournoi de Volleyball</title>
 </head>
 
 <body>
