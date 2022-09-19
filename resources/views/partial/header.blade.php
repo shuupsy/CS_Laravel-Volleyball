@@ -1,4 +1,5 @@
 <nav>
+
     <div class="container flex items-center justify-between p-6 mx-auto text-gray-600 capitalize">
 
         <a href="/">
@@ -7,11 +8,11 @@
         </a>
 
         <div>
-            <a href="/" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-blue-500 mx-1.5 sm:mx-6">HOME</a>
+            <a href="/" class="{{request()->routeIs('home') ? 'active' : '' }} border-b-2 border-transparent transition-colors duration-300 transform pb-2 hover:border-[#cc5200] mx-1.5 sm:mx-6">HOME</a>
 
-            <a href="/equipes" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-blue-500 mx-1.5 sm:mx-6">EQUIPES</a>
+            <a href="/equipes" class="{{ request()->routeIs('equipes.*') ? 'active' : '' }} border-b-2 border-transparent transition-colors duration-300 transform pb-2 hover:border-[#cc5200] mx-1.5 sm:mx-6">EQUIPES</a>
 
-            <a href="/joueurs" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-blue-500 mx-1.5 sm:mx-6">JOUEURS</a>
+            <a href="/joueurs" class="{{ request()->routeIs('joueurs.*') ? 'active' : ''  }} border-b-2 border-transparent transition-colors duration-300 transform pb-2 hover:border-[#cc5200] mx-1.5 sm:mx-6">JOUEURS</a>
         </div>
 
     </div>

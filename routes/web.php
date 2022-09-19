@@ -7,8 +7,11 @@ use App\Http\Controllers\JoueursControllers;
 
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('/equipes', EquipesControllers::class);
+/* Route::resource('/equipes', EquipesControllers::class);
+Route::resource('/joueurs', JoueursControllers::class); */
+
+Route::resource('/equipes', EquipesControllers::class, ['names' => 'equipes']);
 Route::resource('/joueurs', JoueursControllers::class);
 

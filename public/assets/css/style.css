@@ -10,6 +10,11 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Navbar */
+.active {
+    color: #cc5200;
+}
+
 /* Continents Equipe */
 #team_form input[type="radio"]:checked + span {
     background-color: #ffb383;

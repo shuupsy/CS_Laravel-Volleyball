@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <h1 class='text-5xl'>Fiche équipe</h1>
-        
+
         <a href="{{ url('equipes/' . $equipe->id . '/edit') }}"> <button class='bg-slate-500 text-white rounded-lg p-2'>EDIT</button></a>
 
         <h2 class='text-xl'>{{ $equipe -> nom_equipe }}</h2>
