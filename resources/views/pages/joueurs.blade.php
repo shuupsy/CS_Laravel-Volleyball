@@ -8,7 +8,7 @@
             <img src="assets/img/image-banner2.png" alt="banner">
 
             <div class='absolute bottom-2 right-0 flex gap-4'>
-                <button class='bg-[#67CCC4] rounded-lg p-2' id='new_player'>NEW</button>
+                <button class='bg-[#67CCC4] hover:bg-[#7de2d1] rounded-lg p-2' id='new_player'>NEW</button>
             </div>
         </div>
 
@@ -39,12 +39,12 @@
                             {{-- Bouton VOIR --}}
                             <td>
                                 <a href="{{ url('joueurs/' . $joueur->id) }}"> <button
-                                        class='bg-blue-200 rounded-lg p-2'>INFO</button></a>
+                                        class='bg-blue-200 hover:bg-[#8ecae6] rounded-lg p-2'>INFO</button></a>
                             </td>
 
                             <td>
                                 <a href="{{ url('joueurs/' . $joueur->id . '/edit') }}"> <button
-                                        class='bg-slate-500 text-white rounded-lg p-2'>EDIT</button></a>
+                                        class='bg-slate-500 hover:bg-slate-300 hover:text-black text-white rounded-lg p-2'>EDIT</button></a>
                             </td>
 
                             {{-- Bouton DELETE --}}
@@ -138,7 +138,7 @@
                     </div>
 
                     <div class='flex justify-center items-center gap-5'>
-                        <button type='submit' class='bg-blue-500 text-white rounded-lg px-4 py-2'>ENVOYER</button>
+                        <button type='submit' class='bg-[#b8b8ff] hover:bg-[#9381ff] text-white rounded-lg px-4 py-2'>ENVOYER</button>
                         <p class='cursor-pointer text-slate-600 hover:border-[1px] hover:rounded-lg hover:border-slate-600 px-4 py-2'
                             id='close_player_form'>Cancel</p>
                     </div>

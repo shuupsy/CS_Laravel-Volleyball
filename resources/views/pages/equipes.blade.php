@@ -7,7 +7,7 @@
             <img src="assets/img/image-banner2.png" alt="banner">
 
             <div class='absolute bottom-2 right-0 flex gap-4'>
-                <button class='bg-[#67CCC4] rounded-lg p-2' id='new_team'>NEW</button>
+                <button class='bg-[#67CCC4] hover:bg-[#7de2d1] rounded-lg p-2' id='new_team'>NEW</button>
             </div>
         </div>
 
@@ -38,12 +38,12 @@
                             {{-- Bouton VOIR --}}
                             <td class='text-center'>
                                 <a href="{{ url('equipes/' . $equipe->id) }}"> <button
-                                        class='bg-blue-200 rounded-lg p-2'>INFO</button></a>
+                                        class='bg-blue-200 hover:bg-[#8ecae6]  rounded-lg p-2'>INFO</button></a>
                             </td>
 
                             <td class='text-center pr-1.5'>
                                 <a href="{{ url('equipes/' . $equipe->id . '/edit') }}"> <button
-                                        class='bg-slate-500 text-white rounded-lg p-2'>EDIT</button></a>
+                                        class='bg-slate-500 text-white hover:bg-slate-300 hover:text-black rounded-lg p-2'>EDIT</button></a>
                             </td>
 
                             {{-- Bouton DELETE --}}
