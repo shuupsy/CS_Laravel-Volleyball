@@ -9,7 +9,6 @@ use App\Http\Controllers\JoueursControllers;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::resources([
-    '/equipes' => EquipesControllers::class,
-    '/joueurs' => JoueursControllers::class
-]);
+Route::resource('/equipes', EquipesControllers::class);
+Route::resource('/joueurs', JoueursControllers::class);
+
