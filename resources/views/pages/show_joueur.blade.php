@@ -25,7 +25,7 @@
                     <p>|</p>
                     <h2 class='text-[#cc5200]'>{{ $joueur->equipe_id ? $joueur->equipe->nom_equipe : 'sans équipe' }}</span>
                     </h2>
-
+                    
                     @if ($joueur->equipe_id != null)
                         <a href="{{ url('equipes/' . $joueur->equipe->id) }}"> <button
                                 class='bg-blue-200 hover:bg-[#8ecae6] text-black text-xs rounded-lg p-1'>INFO</button></a>

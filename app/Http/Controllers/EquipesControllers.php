@@ -59,7 +59,7 @@ class EquipesControllers extends Controller
      */
     public function show($id)
     {
-        $equipe = Equipe::find($id)
+        $equipe = Equipe::where('id', $id)
                     ->withCount('joueurs')
                     ->first();
         $joueurs_equipe = Joueur::where('equipe_id', $id)
