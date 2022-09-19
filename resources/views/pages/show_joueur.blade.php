@@ -7,11 +7,12 @@
 
             {{-- Menu gauche --}}
             <div class='flex flex-col gap-5'>
-                {{-- Titre --}}
+                {{-- Bouton EDIT --}}
                 <a href="{{ url('joueurs/' . $joueur->id . '/edit') }}" class='absolute top-4 right-4'>
                     <button class='bg-slate-500 text-white hover:bg-slate-300 hover:text-black rounded-lg p-2'>EDIT</button>
                 </a>
 
+                {{-- Titre --}}
                 <div class='flex gap-3 items-center'>
                     <a href="/joueurs" class='text-slate-500 hover:text-black'>
                         <i class='bx bx-subdirectory-left bx-md'></i>

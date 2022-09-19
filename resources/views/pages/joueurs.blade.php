@@ -107,7 +107,7 @@
 
 
                         <input type="text" name="pays" id="pays" value='{{ old('pays') }}'
-                            placeholder="Pays d'origine"class='mb-3 p-2 border-b-2 border-[#ffd8be] focus:outline-none focus:border-[#ffb383] ease-in duration-300'>
+                            placeholder="Pays d'origine" class='mb-3 p-2 border-b-2 border-[#ffd8be] focus:outline-none focus:border-[#ffb383] ease-in duration-300'>
 
                         <div>
                             <label for="equipe">Équipe : </label>
