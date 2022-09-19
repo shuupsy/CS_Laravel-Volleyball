@@ -7,12 +7,12 @@
             <p class='font-bold'>Volley win</p>
         </a>
 
-        <div>
-            <a href="/" class="{{request()->routeIs('home') ? 'active' : '' }} border-b-2 border-transparent transition-colors duration-300 transform pb-2 hover:border-[#cc5200] mx-1.5 sm:mx-6">HOME</a>
+        <div class='flex gap-14'>
+            <a href="/" class="{{request()->routeIs('home') ? 'active' : '' }} text-xl font-extrabold border-b-2 border-transparent transition-colors duration-300 transform pb-2 hover:border-[#cc5200] tracking-widest">HOME</a>
 
-            <a href="/equipes" class="{{ request()->routeIs('equipes.*') ? 'active' : '' }} border-b-2 border-transparent transition-colors duration-300 transform pb-2 hover:border-[#cc5200] mx-1.5 sm:mx-6">EQUIPES</a>
+            <a href="/equipes" class="{{ request()->routeIs('equipes.*') ? 'active' : '' }} text-xl font-extrabold border-b-2 border-transparent transition-colors duration-300 transform pb-2 hover:border-[#cc5200] tracking-widest">EQUIPES</a>
 
-            <a href="/joueurs" class="{{ request()->routeIs('joueurs.*') ? 'active' : ''  }} border-b-2 border-transparent transition-colors duration-300 transform pb-2 hover:border-[#cc5200] mx-1.5 sm:mx-6">JOUEURS</a>
+            <a href="/joueurs" class="{{ request()->routeIs('joueurs.*') ? 'active' : ''  }} text-xl font-extrabold border-b-2 border-transparent transition-colors duration-300 transform pb-2 hover:border-[#cc5200] tracking-widest">JOUEURS</a>
         </div>
 
     </div>
