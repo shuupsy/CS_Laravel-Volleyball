@@ -67,45 +67,43 @@
         <form action="/equipes" method='post' class='hidden' id='team_form'>
             @csrf
             <div class='fixed top-0 left-0 w-screen h-screen bg-slate-600/50 flex justify-center items-center'>
-                <div class='w-2/4 bg-white shadow-lg rounded-lg flex flex-col justify-between p-6 gap-5'>
+                <div class='w-2/4 bg-white shadow-lg rounded-lg flex flex-col justify-between items-center p-6 gap-5'>
 
                     <h1 class='text-5xl'> Ajouter une nouvelle équipe !</h1>
 
-                    <div>
-                        <div>
-                            <label for="nom">Nom de l'équipe: </label>
-                            <input type="text" name="nom" id="nom" value='{{ old('nom') }}'>
-                        </div>
+                    <div class='my-6'>
+                        @foreach ($continents as $continent)
+                            <label>
+                                <input class='hidden' type="radio" name="continent" value="{{ $continent->id }}">
+                                <span
+                                    class='w-20 p-2 rounded-lg cursor-pointer '>{{ $continent->nom_continent }}</span>
+                            </label>
+                        @endforeach
+                    </div>
 
-                        <div>
-                            <label for="continent">Continent: </label>
-                            <select name="continent" id="continent">
-                                @foreach ($continents as $continent)
-                                    <option value="{{ $continent->id }}">{{ $continent->nom_continent }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div>
-                            <label for="pays">Pays: </label>
-                            <input type="texte" name="pays" id="pays" value='{{ old('pays') }}'>
-                        </div>
-
-                        <div>
-                            <label for="ville">Ville: </label>
-                            <input type="text" name="ville" id="ville" value='{{ old('ville') }}'>
-                        </div>
+                    <div class='flex flex-wrap items-center gap-6'>
 
 
+                        <input type="text" name="nom" value='{{ old('nom') }}' placeholder="Nom de l'équipe"
+                            class='mb-3 p-2 border-b-2 border-[#ffd8be] focus:outline-none focus:border-[#ffb383] ease-in duration-300'>
+
+                        <input type="texte" name="pays" id="pays" value='{{ old('pays') }}'
+                            placeholder="Pays"
+                            class='mb-3 p-2 border-b-2 border-[#ffd8be] focus:outline-none focus:border-[#ffb383] ease-in duration-300'>
+
+                        <input type="text" name="ville" id="ville" value='{{ old('ville') }}' placeholder='Ville'
+                            class='mb-3 p-2 border-b-2 border-[#ffd8be] focus:outline-none focus:border-[#ffb383] ease-in duration-300'>
+
                         <div>
-                            <label for="joueurs">Nombre de joueurs max: </label>
-                            <input type="number" name="joueurs" id="joueurs" value='6' min='1' max='6'
-                                value='{{ old('joueurs') }}'>
+                            <label for="joueurs">Nombre de joueurs max : </label>
+                            <input type="number" name="joueurs" id="joueurs" value='9' min='9' max='9'
+                                value='{{ old('joueurs') }}' placeholder='Nombre de joueurs'>
                         </div>
+
                     </div>
 
                     <div class='flex justify-center items-center gap-5'>
-                        <button type='submit' class='bg-blue-500 text-white rounded-lg px-4 py-2'>ENVOYER</button>
+                        <button type='submit' class='bg-[#b8b8ff] hover:bg-[#9381ff] text-white rounded-lg px-4 py-2'>ENVOYER</button>
                         <p class='cursor-pointer text-slate-600 hover:border-[1px] hover:rounded-lg hover:border-slate-600 px-4 py-2'
                             id='close_team_form'>Cancel</p>
                     </div>

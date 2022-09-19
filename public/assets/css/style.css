@@ -10,3 +10,12 @@ body {
     background-repeat: no-repeat;
 }
 
+#team_form input[type="radio"]:checked + span {
+    background-color: #ffb383;
+    color: white;
+  }
+
+#team_form input[type="radio"]:hover + span {
+    background-color: #ffb383;
+    color: white;
+  }
