@@ -16,9 +16,6 @@
     </header>
 
     <main class='w-8/12 mx-auto'>
-        {{-- <div class='flex justify-center my-2'>
-            <img src="/assets/img/image-div1.png" alt="banner img">
-        </div> --}}
         @yield('content')
     </main>
 
@@ -28,7 +25,8 @@
         @include('partial.footer')
     </footer>
 
-    <script src="/assets/js/main.js"></script>
+    {{-- Script JS --}}
+    @yield('js')
 </body>
 
 </html>
