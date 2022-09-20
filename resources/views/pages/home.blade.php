@@ -1,65 +1,81 @@
 @extends('layouts.index')
 
 @section('content')
-    <section>
-        <h1 class='text-4xl'>Équipes remplies ({{ count($full_team) }})</h1>
-        @foreach ($full_team as $team)
-            <ul>
-                <li>{{ $team->nom_equipe }}</li>
-            </ul>
-        @endforeach
+    <section class='flex flex-col gap-10'>
+        <div>
+            <h1 class='text-4xl'>Équipes remplies ({{ count($full_team) }})</h1>
+            @foreach ($full_team as $team)
+                <ul>
+                    <li>{{ $team->nom_equipe }}</li>
+                </ul>
+            @endforeach
 
-    </section>
+        </div>
 
-    <section>
-        <h1 class='text-4xl'>Équipes NON remplies</h1>
-        @foreach ($nonfull_team as $team)
-            <ul>
-                <li>{{ $team->nom_equipe }}</li>
-            </ul>
-        @endforeach
-    </section>
-
-    <section>
-        <h1 class='text-4xl'>Joueurs SANS équipe</h1>
-        @foreach ($noteam_player as $player)
-            <ul>
-                <li>{{ $player->nom_joueur }}</li>
-            </ul>
-        @endforeach
-    </section>
-
-    <section>
-        <h1 class='text-4xl'>Joueurs AVEC équipe</h1>
-        @foreach ($withteam_player as $player)
-            <ul>
-                <li>{{ $player->nom_joueur }}</li>
-            </ul>
-        @endforeach
-    </section>
-
-    <section>
-        <h1 class='text-4xl'>Équipes d'Europe</h1>
-        @foreach ($europe_team as $team)
-            <ul>
-                <li>{{ $team->nom_equipe }}</li>
-            </ul>
-        @endforeach
-    </section>
-
-    <section class='flex flex-col gap-2'>
-        <h1 class='text-4xl'>Équipes HORS Europe ({{ count($outside_team) }})</h1>
-
-        <div id='gtc'>
-            @foreach ($outside_team as $team)
-                <div class='pays {{ $team->continent->nom_continent }} border-2 border-slate-500 rounded-lg shadow-lg p-6'>
-
-                    <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
-                    <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
-                </div>
+        <div>
+            <h1 class='text-4xl'>Équipes NON remplies</h1>
+            @foreach ($nonfull_team as $team)
+                <ul>
+                    <li>{{ $team->nom_equipe }}</li>
+                </ul>
             @endforeach
         </div>
 
+        <div>
+            <h1 class='text-4xl'>Joueurs SANS équipe</h1>
+            @foreach ($noteam_player as $player)
+                <ul>
+                    <li>{{ $player->nom_joueur }}</li>
+                </ul>
+            @endforeach
+        </div>
+
+        <div>
+            <h1 class='text-4xl'>Joueurs AVEC équipe</h1>
+            @foreach ($withteam_player as $player)
+                <ul>
+                    <li>{{ $player->nom_joueur }}</li>
+                </ul>
+            @endforeach
+        </div>
+
+
+        {{-- Equipes d'Europe --}}
+        <div class='flex flex-col gap-2'>
+            <h1 class='text-4xl'>Équipes d'Europe ({{ count($outside_team) }})</h1>
+
+            <div class='gtc'>
+                @foreach ($europe_team as $team)
+                    <a href="/equipes/{{ $team->id }}">
+                        <div
+                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 rounded-lg shadow-lg p-6'>
+
+                            <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
+                            <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- Equipes HORS Europe --}}
+        <div class='flex flex-col gap-2'>
+            <h1 class='text-4xl'>Équipes HORS Europe ({{ count($outside_team) }})</h1>
+
+            <div class='gtc'>
+                @foreach ($outside_team as $team)
+                    <a href="/equipes/{{ $team->id }}">
+                        <div
+                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 rounded-lg shadow-lg p-6'>
+
+                            <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
+                            <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+
+        </div>
     </section>
 
     {{-- <section>
