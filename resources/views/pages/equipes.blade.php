@@ -95,8 +95,7 @@
 
                         <div>
                             <label for="joueurs">Nombre de joueurs max : </label>
-                            <input type="number" name="joueurs" id="joueurs" value='9' min='9' max='9'
-                                value='{{ old('joueurs') }}' placeholder='Nombre de joueurs'>
+                            <input type="number" name="joueurs" id="joueurs" value='9' min='9' max='9'>
                         </div>
 
                     </div>

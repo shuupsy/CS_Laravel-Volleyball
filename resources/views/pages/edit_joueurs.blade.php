@@ -3,7 +3,7 @@
 @section('content')
     <section class='flex justify-center'>
         <div class='w-3/4 bg-[#f8f7ff]/[.36] border-2 border-slate-500 rounded-lg shadow-lg p-6 flex flex-col items-center justify-center gap-10'>
-            
+
                 {{-- Titre --}}
                 <div class='flex gap-3 items-center'>
                     <a href="/joueurs" class='text-slate-500 hover:text-black'>
@@ -13,7 +13,7 @@
                     <h1 class='text-5xl'>Editer {{ $joueur->prenom_joueur . ' ' . $joueur->nom_joueur }} !</h1>
                 </div>
 
-
+                {{-- Formulaire --}}
                 <form action="{{ url('/joueurs' . '/' . $joueur->id) }}" method='post' enctype="multipart/form-data" id='edit_player_form' class='flex flex-col gap-3'>
                     @csrf
                     @method('PATCH')
@@ -75,7 +75,7 @@
                         <label for="role">Rôle: </label>
                             @foreach ($roles as $role)
                             <label>
-                                <input class='hidden' type="radio" name="role" value="{{ $role->id }}">
+                                <input class='hidden' type="radio" name="role" value="{{ $role->id }}" {{ $role->role == $joueur->role->role ? 'checked="checked"' : ''}}>
                                 <span class='w-20 p-2 rounded-lg cursor-pointer '>{{ $role->role }}</span>
                             </label>
                             @endforeach
@@ -100,9 +100,8 @@
 
                     <div class='flex justify-center items-center gap-5'>
                         <button type='submit'
-                            class='bg-[#b8b8ff] hover:bg-[#9381ff] text-white rounded-lg px-4 py-2'>ENVOYER</button>
-                        <p class='cursor-pointer text-slate-600 hover:border-[1px] hover:rounded-lg hover:border-slate-600 px-4 py-2'
-                            id='close_player_form'>Cancel</p>
+                            class='bg-[#b8b8ff] hover:bg-[#9381ff] text-white rounded-lg px-4 py-2'>METTRE A JOUR</button>
+                        <a href="/joueurs"><p class='cursor-pointer text-slate-600 hover:border-[1px] hover:rounded-lg hover:border-slate-600 px-4 py-2'>Cancel</p></a>
                     </div>
 
                 </form>

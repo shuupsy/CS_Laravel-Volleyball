@@ -31,13 +31,15 @@ body {
 
 /* Role Joueur */
   #player_form input[type="radio"]:checked + span,
-  #edit_player_form input[type="radio"]:checked + span {
+  #edit_player_form input[type="radio"]:checked + span,
+  #edit_team_form input[type="radio"]:checked + span  {
     background-color: #ffb383;
     color: white;
   }
 
 #player_form input[type="radio"]:hover + span,
-#edit_player_form input[type="radio"]:hover + span {
+#edit_player_form input[type="radio"]:hover + span,
+#edit_team_form input[type="radio"]:hover + span {
     background-color: #ffb383;
     color: white;
   }

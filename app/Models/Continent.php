@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Continent extends Model
 {
     use HasFactory;
+
+    public function equipe() {
+        return $this->hasOne(Equipe::class);
+    }
 }
