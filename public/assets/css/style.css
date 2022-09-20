@@ -44,10 +44,9 @@ body {
 
 
 /* Bg Europe */
-#europe {
-    background-image: url('/assets/img/europe-removebg.png');
-    background-color: rgb(156, 219, 255, .2);
+.pays {
     background-position: 87%;
     background-size: contain;
     background-repeat: no-repeat;
 }
+

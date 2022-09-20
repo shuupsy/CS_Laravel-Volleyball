@@ -3,7 +3,7 @@
 @section('content')
     <section class='flex justify-center'>
         <div
-            class='relative w-2/3 bg-[#f8f7ff]/[.36] border-2 border-slate-500 rounded-lg shadow-lg p-6 flex flex-col justify-center gap-5' id='europe'>
+            class='pays {{ $equipe->continent->nom_continent  }} relative w-2/3 border-2 border-slate-500 rounded-lg shadow-lg p-6 flex flex-col justify-center gap-5'>
 
             {{-- Titre --}}
             <div class='flex gap-3 items-center'>
@@ -23,14 +23,13 @@
             {{-- Contenu --}}
             <div class='flex flex-col gap-2'>
 
-               {{--  <p>Continent : {{ $equipe->continent->nom_continent }}</p> --}}
-
                 <p class='text-lg'>Joueurs ( {{ $equipe->joueurs_count }} / {{ $equipe->nb_joueurs_max }} max )</p>
                 <ul>
                     @foreach ($joueurs_equipe as $joueur)
                         <li>{{ $joueur->nom_joueur }}, {{ $joueur->prenom_joueur }}, {{ $joueur->role->role }}
                             <a href="{{ url('joueurs/' . $joueur->id) }}">
-                                <button class='bg-blue-200 hover:bg-[#8ecae6] text-black text-xs rounded-lg p-1'>INFO</button>
+                                <button
+                                    class='bg-blue-200 hover:bg-[#8ecae6] text-black text-xs rounded-lg p-1'>INFO</button>
                             </a>
                         </li>
                     @endforeach
@@ -40,4 +39,8 @@
 
         </div>
     </section>
+@endsection
+
+@section('js')
+    <script src="/assets/js/show_team.js"></script>
 @endsection
