@@ -25,7 +25,7 @@
                     <p>|</p>
                     <h2 class='text-[#cc5200]'>{{ $joueur->equipe_id ? $joueur->equipe->nom_equipe : 'sans équipe' }}</span>
                     </h2>
-                    
+
                     @if ($joueur->equipe_id != null)
                         <a href="{{ url('equipes/' . $joueur->equipe->id) }}"> <button
                                 class='bg-blue-200 hover:bg-[#8ecae6] text-black text-xs rounded-lg p-1'>INFO</button></a>
@@ -70,6 +70,9 @@
             <div>
                 @if ($joueur->photo_id != null)
                     <img src="{{ asset('storage/photos/' . $joueur->photo->photo_path) }}" alt="photo joueur"
+                        class='w-44 h-44 object-cover rounded-full border-2 border-slate-600'>
+                @else
+                    <img src="/assets/img/default-avatar.png" alt="photo default joueur"
                         class='w-44 h-44 object-cover rounded-full border-2 border-slate-600'>
                 @endif
             </div>
