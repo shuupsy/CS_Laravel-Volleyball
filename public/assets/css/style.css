@@ -8,6 +8,8 @@ body {
     background-image: url('/assets/img/background-body.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 
 /* Navbar */
@@ -39,3 +41,13 @@ body {
     background-color: #ffb383;
     color: white;
   }
+
+
+/* Bg Europe */
+#europe {
+    background-image: url('/assets/img/europe-removebg.png');
+    background-color: rgb(156, 219, 255, .2);
+    background-position: 87%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

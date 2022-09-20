@@ -61,7 +61,7 @@ class EquipesControllers extends Controller
     {
         $equipe = Equipe::where('id', $id)
                     ->withCount('joueurs')
-                    ->first();
+                    ->first();      
         $joueurs_equipe = Joueur::where('equipe_id', $id)
                                 ->get();
         return view('pages.show_equipe', compact('equipe', 'joueurs_equipe'));

@@ -3,7 +3,8 @@
 @section('content')
     <section class='flex justify-center'>
         <div class='w-3/4 bg-[#f8f7ff]/[.36] border-2 border-slate-500 rounded-lg shadow-lg p-6 flex flex-col items-center justify-center gap-10'>
-
+            
+                {{-- Titre --}}
                 <div class='flex gap-3 items-center'>
                     <a href="/joueurs" class='text-slate-500 hover:text-black'>
                         <i class='bx bx-subdirectory-left bx-md'></i>
