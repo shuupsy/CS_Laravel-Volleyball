@@ -8,7 +8,7 @@
                 @foreach ($full_team as $team)
                     <a href="/equipes/{{ $team->id }}">
                         <div
-                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 rounded-lg shadow-lg p-6'>
+                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 hover:border-4 hover:border-slate-700 rounded-lg shadow-lg p-6'>
 
                             <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
                             <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
@@ -24,7 +24,7 @@
                 @foreach ($nonfull_team as $team)
                     <a href="/equipes/{{ $team->id }}">
                         <div
-                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 rounded-lg shadow-lg p-6'>
+                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 hover:border-4 hover:border-slate-700 rounded-lg shadow-lg p-6'>
 
                             <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
                             <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
@@ -34,22 +34,70 @@
             </div>
         </div>
 
-        <div>
+        {{-- Joueurs sans équipes --}}
+        <div class='flex flex-col gap-2'>
             <h1 class='text-4xl'>Joueurs SANS équipe</h1>
-            @foreach ($noteam_player as $player)
-                <ul>
-                    <li>{{ $player->nom_joueur }}</li>
-                </ul>
-            @endforeach
+            <div class='gtc-player'>
+                @foreach ($noteam_player as $player)
+                <a href="/joueurs/{{ $player->id }}">
+                         <div
+                             class='h-40 border-2 border-slate-500 hover:border-4 hover:border-slate-700 rounded-lg shadow-lg p-6 flex justify-between items-center'>
+
+                             <div>
+                                 <h1 class='text-2xl font-bold'>{{ $player->prenom_joueur }} <span
+                                         class='uppercase'>{{ $player->nom_joueur }}</span></h1>
+
+                                 <h2 class='text-[#cc5200] text-xl uppercase'>{{ $player->role->role }}</h2>
+                             </div>
+
+                             <div>
+                                 @if ($player->photo_id != null)
+                                     <img src="{{ asset('storage/photos/' . $player->photo->photo_path) }}"
+                                         alt="photo joueur"
+                                         class='w-32 h-32 object-cover rounded-full border-2 border-slate-600'>
+                                 @else
+                                     <img src="/assets/img/default-avatar.png" alt="photo default joueur"
+                                         class='w-32 h-32 object-cover rounded-full border-2 border-slate-600'>
+                                 @endif
+                             </div>
+                         </div>
+                     </a>
+             @endforeach
+            </div>
         </div>
 
-        <div>
+        {{-- Joueurs AVEC équipes --}}
+        <div class='flex flex-col gap-2'>
             <h1 class='text-4xl'>Joueurs AVEC équipe</h1>
-            @foreach ($withteam_player as $player)
-                <ul>
-                    <li>{{ $player->nom_joueur }}</li>
-                </ul>
-            @endforeach
+            <div class='gtc-player'>
+                @foreach ($withteam_player as $player)
+                    <a href="/joueurs/{{ $player->id }}">
+                        <div
+                            class='h-40 border-2 border-slate-500 hover:border-4 hover:border-slate-700 rounded-lg shadow-lg p-6 flex justify-between items-center'>
+
+                            <div>
+                                <h1 class='text-2xl font-bold'>{{ $player->prenom_joueur }} <span
+                                        class='uppercase'>{{ $player->nom_joueur }}</span></h1>
+
+                                <h2 class='text-[#cc5200] text-xl'>
+                                    {{ $player->equipe->nom_equipe }} - <span class='uppercase'>{{ $player->role->role }}</span>
+                                </h2>
+                            </div>
+
+                            <div>
+                                @if ($player->photo_id != null)
+                                    <img src="{{ asset('storage/photos/' . $player->photo->photo_path) }}"
+                                        alt="photo joueur"
+                                        class='w-32 h-32 object-cover rounded-full border-2 border-slate-600'>
+                                @else
+                                    <img src="/assets/img/default-avatar.png" alt="photo default joueur"
+                                        class='w-32 h-32 object-cover rounded-full border-2 border-slate-600'>
+                                @endif
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
         </div>
 
 
@@ -61,7 +109,7 @@
                 @foreach ($europe_team as $team)
                     <a href="/equipes/{{ $team->id }}">
                         <div
-                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 rounded-lg shadow-lg p-6'>
+                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 hover:border-4 hover:border-slate-700 rounded-lg shadow-lg p-6'>
 
                             <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
                             <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
@@ -79,7 +127,7 @@
                 @foreach ($outside_team as $team)
                     <a href="/equipes/{{ $team->id }}">
                         <div
-                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 rounded-lg shadow-lg p-6'>
+                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 hover:border-4 hover:border-slate-700 rounded-lg shadow-lg p-6'>
 
                             <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
                             <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
