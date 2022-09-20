@@ -17,6 +17,13 @@ body {
     color: #cc5200;
 }
 
+/* HOME */
+#gtc {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
 /* Continents Equipe */
 #team_form input[type="radio"]:checked + span {
     background-color: #ffb383;
@@ -47,7 +54,7 @@ body {
 
 /* Bg Europe */
 .pays {
-    background-position: 87%;
+    background-position: 90%;
     background-size: contain;
     background-repeat: no-repeat;
 }

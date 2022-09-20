@@ -4,60 +4,66 @@
     <section>
         <h1 class='text-4xl'>Équipes remplies ({{ count($full_team) }})</h1>
         @foreach ($full_team as $team)
-        <ul>
-            <li>{{ $team -> nom_equipe }}</li>
-        </ul>
-    @endforeach
+            <ul>
+                <li>{{ $team->nom_equipe }}</li>
+            </ul>
+        @endforeach
 
     </section>
 
     <section>
-        <h1 class='text-4xl'>Équipes NON remplies ({{ count($nonfull_team) }})</h1>
+        <h1 class='text-4xl'>Équipes NON remplies</h1>
         @foreach ($nonfull_team as $team)
             <ul>
-                <li>{{ $team -> nom_equipe }}</li>
+                <li>{{ $team->nom_equipe }}</li>
             </ul>
         @endforeach
     </section>
 
     <section>
-        <h1 class='text-4xl'>Joueurs SANS équipe ({{ count($noteam_player) }})</h1>
+        <h1 class='text-4xl'>Joueurs SANS équipe</h1>
         @foreach ($noteam_player as $player)
             <ul>
-                <li>{{ $player -> nom_joueur }}</li>
+                <li>{{ $player->nom_joueur }}</li>
             </ul>
         @endforeach
     </section>
 
     <section>
-        <h1 class='text-4xl'>Joueurs AVEC équipe ({{ count($withteam_player) }})</h1>
+        <h1 class='text-4xl'>Joueurs AVEC équipe</h1>
         @foreach ($withteam_player as $player)
             <ul>
-                <li>{{ $player -> nom_joueur }}</li>
+                <li>{{ $player->nom_joueur }}</li>
             </ul>
         @endforeach
     </section>
 
     <section>
-        <h1 class='text-4xl'>Équipes d'Europe ({{ count($europe_team) }})</h1>
+        <h1 class='text-4xl'>Équipes d'Europe</h1>
         @foreach ($europe_team as $team)
             <ul>
-                <li>{{ $team -> nom_equipe }}</li>
+                <li>{{ $team->nom_equipe }}</li>
             </ul>
         @endforeach
     </section>
 
-    <section>
+    <section class='flex flex-col gap-2'>
         <h1 class='text-4xl'>Équipes HORS Europe ({{ count($outside_team) }})</h1>
-        @foreach ($outside_team as $team)
-            <ul>
-                <li>{{ $team -> nom_equipe }}</li>
-            </ul>
-        @endforeach
+
+        <div id='gtc'>
+            @foreach ($outside_team as $team)
+                <div class='pays {{ $team->continent->nom_continent }} border-2 border-slate-500 rounded-lg shadow-lg p-6'>
+
+                    <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
+                    <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
+                </div>
+            @endforeach
+        </div>
+
     </section>
 
-    <section>
-        <h1 class='text-4xl'>Joueuses, avec équipe ({{ count($withteam_female) }})</h1>
+    {{-- <section>
+        <h1 class='text-4xl'>Joueuses, avec équipe</h1>
         @foreach ($withteam_female as $player)
             <ul>
                 <li>{{ $player -> nom_joueur }}</li>
@@ -66,13 +72,13 @@
     </section>
 
     <section>
-        <h1 class='text-4xl'>Joueurs, avec équipe ({{ count($withteam_male) }})</h1>
+        <h1 class='text-4xl'>Joueurs, avec équipe</h1>
         @foreach ($withteam_male as $player)
             <ul>
                 <li>{{ $player -> nom_joueur }}</li>
             </ul>
         @endforeach
-    </section>
+    </section> --}}
 
 
     {{-- <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
@@ -201,6 +207,8 @@
             </button>
         </div>
     </div> --}}
+@endsection
 
-
+@section('js')
+    <script src="/assets/js/show_team.js"></script>
 @endsection

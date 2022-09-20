@@ -26,7 +26,9 @@ class HomeController extends Controller
             ->get();
 
         $europe_team = Equipe::where('continent_id', 1)->get();
-        $outside_team = Equipe::whereNot('continent_id', 1)->get();
+        $outside_team = Equipe::whereNot('continent_id', 1)
+            ->orderBy('continent_id', 'asc')
+            ->get();
 
         $withteam_female = Joueur::whereNot('equipe_id', null)
             ->where('genre', 'F')
