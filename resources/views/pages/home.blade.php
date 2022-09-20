@@ -4,21 +4,34 @@
     <section class='flex flex-col gap-10'>
         <div>
             <h1 class='text-4xl'>Équipes remplies ({{ count($full_team) }})</h1>
-            @foreach ($full_team as $team)
-                <ul>
-                    <li>{{ $team->nom_equipe }}</li>
-                </ul>
-            @endforeach
+            <div class='gtc'>
+                @foreach ($full_team as $team)
+                    <a href="/equipes/{{ $team->id }}">
+                        <div
+                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 rounded-lg shadow-lg p-6'>
 
+                            <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
+                            <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
         </div>
 
         <div>
             <h1 class='text-4xl'>Équipes NON remplies</h1>
-            @foreach ($nonfull_team as $team)
-                <ul>
-                    <li>{{ $team->nom_equipe }}</li>
-                </ul>
-            @endforeach
+            <div class='gtc'>
+                @foreach ($nonfull_team as $team)
+                    <a href="/equipes/{{ $team->id }}">
+                        <div
+                            class='pays {{ $team->continent->nom_continent }} h-40 border-2 border-slate-500 rounded-lg shadow-lg p-6'>
+
+                            <h1 class='text-5xl'>{{ $team->nom_equipe }}</h1>
+                            <h2 class='text-xl'>{{ $team->ville }}, {{ $team->pays }}.</h2>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
         </div>
 
         <div>
@@ -42,7 +55,7 @@
 
         {{-- Equipes d'Europe --}}
         <div class='flex flex-col gap-2'>
-            <h1 class='text-4xl'>Équipes d'Europe ({{ count($outside_team) }})</h1>
+            <h1 class='text-4xl'>Équipes d'Europe ({{ count($europe_team) }})</h1>
 
             <div class='gtc'>
                 @foreach ($europe_team as $team)

@@ -11,10 +11,12 @@ class HomeController extends Controller
     public function index() {
         $full_team = Equipe::withCount('joueurs')
             ->has('joueurs', 6)
+            ->orderBy('nom_equipe', 'asc')
             ->get();
 
         $nonfull_team = Equipe::withCount('joueurs')
             ->has('joueurs', '<', 6)
+            ->orderBy('nom_equipe', 'asc')
             ->get();
 
         $noteam_player = Joueur::where('equipe_id', null)
