@@ -28,6 +28,7 @@
     </footer>
 
     {{-- Script JS --}}
+    <script src="/assets/js/main.js"></script>
     @yield('js')
 </body>
 
