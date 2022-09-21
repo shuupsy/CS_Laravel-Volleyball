@@ -20,10 +20,12 @@ class HomeController extends Controller
             ->get();
 
         $noteam_player = Joueur::where('equipe_id', null)
+            ->inRandomOrder()
             ->take(4)
             ->get();
 
         $withteam_player = Joueur::whereNot('equipe_id', null)
+            ->inRandomOrder()
             ->take(4)
             ->get();
 

@@ -42,6 +42,7 @@ class JoueursControllers extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->file('photo'));
         Storage::put('public/photos', $request->file('photo'));
 
         $photo= new Photo();
