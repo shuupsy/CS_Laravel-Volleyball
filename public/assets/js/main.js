@@ -1,11 +1,9 @@
-let header = document.querySelector('header')
 let nav = document.querySelector('nav')
-let main_pos = document.querySelector('main').offsetTop
-let navLinks = document.querySelectorAll('.navLink')
+let header_pos = document.querySelector('header').offsetTop
 
 function nav_scroll() {
     let x = window.scrollY;
-    if (x > main_pos) {
+    if (x > header_pos) {
         nav.classList.add('bg-[#f8f7ff]')
         nav.classList.add('fixed')
         nav.classList.add('top-0')
