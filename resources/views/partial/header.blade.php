@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between w-full py-3 px-16 text-gray-600 capitalize">
+<nav class="flex items-center justify-between w-full py-3 px-16 text-gray-600 capitalize z-20">
 
     <a href="/">
         <img src="/assets/img/logo.png" alt="logo brand" width='75px'>

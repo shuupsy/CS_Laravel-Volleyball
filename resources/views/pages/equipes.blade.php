@@ -7,7 +7,7 @@
             <img src="assets/img/image-banner2.png" alt="banner">
 
             <div class='absolute bottom-2 right-0 flex gap-4'>
-                <button class='bg-[#67CCC4] hover:bg-[#7de2d1] rounded-lg p-2 -z-20' id='new_team'>NEW</button>
+                <button class='bg-[#67CCC4] hover:bg-[#7de2d1] rounded-lg p-2' id='new_team'>NEW</button>
             </div>
         </div>
 
