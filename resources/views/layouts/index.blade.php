@@ -17,6 +17,10 @@
         @include('partial.header')
     </header>
 
+    <div id='volley-left'>
+
+    </div>
+
     <main class='w-8/12 mx-auto'>
         @yield('content')
     </main>
