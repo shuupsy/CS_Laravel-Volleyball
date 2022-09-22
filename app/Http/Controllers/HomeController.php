@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index() {
         $full_team = Equipe::withCount('joueurs')
-            ->has('joueurs', 6)
+            ->has('joueurs', 9)
             ->orderBy('nom_equipe', 'asc')
             ->get();
 
