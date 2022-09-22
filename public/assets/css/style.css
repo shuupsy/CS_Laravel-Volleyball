@@ -9,7 +9,7 @@ body {
     /* background-size:contain; */
     background-size: 100%;
     background-repeat: no-repeat;
-   /*  background-attachment: fixed; */
+    background-attachment: fixed;
 
 }
 /* Navbar */
@@ -21,9 +21,7 @@ nav {
     color: #cc5200;
 }
 
-/* Volleyball left */
-#volley-left {
-    background-image: url('/assets/img/image-transition2.png');
+.volleyball {
     background-size: cover;
     background-repeat: no-repeat;
     height: auto;
@@ -34,6 +32,14 @@ nav {
     bottom: 0;
     right: 0;
     z-index: -999;
+}
+/* Volleyball left */
+#volley-left {
+    background-image: url('/assets/img/image-transition2.png');
+}
+
+#volley-right {
+    background-image: url('/assets/img/image-transition.png');
 }
 
 /* HOME */

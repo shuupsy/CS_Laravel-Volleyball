@@ -16,11 +16,13 @@ function nav_scroll() {
 }
 
 /* Volleyball left */
-let volley = document.querySelector('#volley-left')
+let volleyLeft = document.querySelector('#volley-left')
+let volleyRight = document.querySelector('#volley-right')
 
 function volley_scroll() {
-    let y = (document.documentElement).scrollTop 
-    volley.style.transform = "translate3d(0px," + y + "px,0px"
+    let y = (document.documentElement).scrollTop / 1.5
+    volleyLeft.style.transform = "translate3d(0px," + y + "px,0px"
+    volleyRight.style.transform = "translate3d(-" + y/5 + "px,-" + y/3 + "px,0px"
 }
 
 window.addEventListener("scroll", () => {
