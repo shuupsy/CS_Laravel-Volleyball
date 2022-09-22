@@ -39,14 +39,13 @@ class EquipesControllers extends Controller
      */
     public function store(Request $request)
     {
-        $new_equipe = new Equipe();
-        $new_equipe -> nom_equipe = $request -> nom;
-        $new_equipe -> ville = $request -> ville;
-        $new_equipe -> pays = $request -> pays;
-        $new_equipe -> nb_joueurs_max = $request -> joueurs;
-        $new_equipe -> continent_id = $request -> continent;
-
-        $new_equipe->save();
+        Equipe::create([
+            'nom_equipe' => $request -> nom,
+            'ville' => $request -> ville,
+            'pays' => $request -> pays,
+            'nb_joueurs_max' => $request -> joueurs,
+            'continent_id' => $request -> continent,
+        ]);
 
         return redirect()->back();
     }
@@ -61,7 +60,7 @@ class EquipesControllers extends Controller
     {
         $equipe = Equipe::where('id', $id)
                     ->withCount('joueurs')
-                    ->first();      
+                    ->first();
         $joueurs_equipe = Joueur::where('equipe_id', $id)
                                 ->get();
         return view('pages.show_equipe', compact('equipe', 'joueurs_equipe'));

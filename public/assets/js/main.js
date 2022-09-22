@@ -21,6 +21,7 @@ let volleyRight = document.querySelector('#volley-right')
 
 function volley_scroll() {
     let y = (document.documentElement).scrollTop / 1.5
+    console.log(y)
     volleyLeft.style.transform = "translate3d(" + y/30 + "px," + y + "px,0px"
     volleyRight.style.transform = "translate3d(-" + y/5 + "px,-" + y/3 + "px,0px"
 }

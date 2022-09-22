@@ -20,7 +20,7 @@ class JoueursControllers extends Controller
     {
         $joueurs = Joueur::all();
         $roles = Role::all();
-        $equipes = Equipe::all();
+        $equipes = Equipe::withCount('joueurs')->get();
         return view('pages.joueurs', compact('joueurs', 'roles', 'equipes'));
     }
 
@@ -42,7 +42,21 @@ class JoueursControllers extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->file('photo'));
+        $equipes =
+        /* Validation */
+       request()->validate([
+            "nom" => "required|min:1|max:50",
+            "prenom" => "required|min:1|max:50",
+            "age" => "required|min:1|max:60",
+            "telephone" => "required|size:12",
+            "mail" => "required|min:1|max:300",
+            "genre" => "required|min:1|max:300",
+            "pays" => "required|min:1|max:300",
+            "image" => "mimes:jpg,png,jpeg",
+             ]);
+
+        /* Fin validation */
+
         Storage::put('public/photos', $request->file('photo'));
 
         $photo= new Photo();
@@ -86,7 +100,7 @@ class JoueursControllers extends Controller
     public function edit($id)
     {
        $joueur = Joueur::find($id);
-       $equipes = Equipe::all();
+       $equipes = Equipe::withCount('joueurs')->get();
        $roles = Role::all();
        return view('pages.edit_joueurs', compact('joueur', 'equipes', 'roles'));
     }
